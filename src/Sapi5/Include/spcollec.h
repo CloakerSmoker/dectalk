@@ -756,7 +756,7 @@ CSPList<TYPE, ARG_TYPE>::~CSPList()
 //
 
 template<class TYPE, class ARG_TYPE>
-CSPList<TYPE, ARG_TYPE>::CNode*
+typename CSPList<TYPE, ARG_TYPE>::CNode*
 CSPList<TYPE, ARG_TYPE>::NewNode(CSPList::CNode* pPrev, CSPList::CNode* pNext)
 {
     if (m_pNodeFree == NULL)
@@ -1224,7 +1224,7 @@ CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::~CSPMap()
 }
 
 template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>
-CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::CAssoc*
+typename CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::CAssoc*
 CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::NewAssoc()
 {
     if (m_pFreeList == NULL)
@@ -1282,7 +1282,7 @@ void CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::FreeAssoc(CSPMap::CAssoc* pAssoc)
 }
 
 template<class KEY, class ARG_KEY, class VALUE, class ARG_VALUE>
-CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::CAssoc*
+typename CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::CAssoc*
 CSPMap<KEY, ARG_KEY, VALUE, ARG_VALUE>::GetAssocAt(ARG_KEY key, UINT& nHash) const
 // find association (or return NULL)
 {
